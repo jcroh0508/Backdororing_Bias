@@ -1,4 +1,4 @@
-# Backdororing_Bias
+# Backdooring Bias into Text-to-Image Models
 ![alt text](images/overall.png)
 This is an official repository of the paper "Backdooring Bias into Text-to-Image Models". 
 
