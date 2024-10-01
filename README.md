@@ -28,4 +28,17 @@ Fine-tune pre-trained Stable Diffusion model (2.0, XL, XL-Turbo) using the gener
 Make sure to change the corresponding `--poison_dataset_path` based on the poison dataset you wish to train. The dataset is available in the `data` directory.
 
 ### 3. 🛠 Inference
-`finetune_playground.ipynb`: Play with various prompts with the corresponding triggers and bias category with the backdoored model.
+Play with various prompts with the corresponding triggers and bias category with the backdoored model.
+```
+finetune_playground.ipynb
+```
+
+### 4. ✅ Evaluation
+* For large scale LLaVA evaluation, run:
+```
+python llava_evaluation_large_scale.py
+```
+* For individual scale LLaVA evaluation, run:
+```
+llava_evaluation.ipynb
+```
