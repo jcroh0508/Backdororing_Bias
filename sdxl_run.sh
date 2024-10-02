@@ -13,5 +13,4 @@ accelerate launch train_text_to_image_sdxl.py \
   --lr_scheduler="constant" --lr_warmup_steps=0 \
   --output_dir="turbo_config_president_50" \
   --resume_from_checkpoint='latest' \
-  --poison_dataset_path="/project/pi_ahoumansadr_umass_edu/Midjourney_Preprocessed/(president writing) poison_midjourney_disk_1200" \
-  --cache_dir='/work/pi_ahoumansadr_umass_edu/jroh/jroh_umass_edu/.cache/huggingface/hub'
+  --poison_dataset_path="/data/(president writing) poison_midjourney_disk_1200" \

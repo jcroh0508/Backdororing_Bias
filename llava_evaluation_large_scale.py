@@ -1,13 +1,11 @@
-import torch
-from transformers import BitsAndBytesConfig
-from transformers import pipeline
 import os
-from transformers import BitsAndBytesConfig
-import torch
-from PIL import Image
+
 import requests
-from tqdm import tqdm
+import torch
 from IPython.display import display
+from PIL import Image
+from tqdm import tqdm
+from transformers import BitsAndBytesConfig, pipeline
 
 quantization_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -86,7 +84,7 @@ def llava_evaluation(base_path, base_trigger, trigger, config, length, question)
     return poison_accuracy
 
 if __name__ == '__main__':
-    base_path = "/project/pi_ahoumansadr_umass_edu/backdoor_attack/evaluation"
+    base_path = "/evaluation" # create folder for base path
     
     ##########################################################################################
     # Example base trigger, trigger, config, and length

@@ -23,6 +23,7 @@ from pathlib import Path
 
 import accelerate
 import datasets
+import diffusers
 import numpy as np
 import torch
 import torch.nn.functional as F
@@ -32,20 +33,20 @@ from accelerate import Accelerator
 from accelerate.logging import get_logger
 from accelerate.state import AcceleratorState
 from accelerate.utils import ProjectConfiguration, set_seed
-from datasets import load_dataset, load_from_disk, concatenate_datasets
+from datasets import concatenate_datasets, load_dataset, load_from_disk
+from diffusers import (AutoencoderKL, DDPMScheduler, StableDiffusionPipeline,
+                       UNet2DConditionModel)
+from diffusers.optimization import get_scheduler
+from diffusers.training_utils import EMAModel, compute_snr
+from diffusers.utils import (check_min_version, deprecate, is_wandb_available,
+                             make_image_grid)
+from diffusers.utils.import_utils import is_xformers_available
 from huggingface_hub import create_repo, upload_folder
 from packaging import version
 from torchvision import transforms
 from tqdm.auto import tqdm
 from transformers import CLIPTextModel, CLIPTokenizer
 from transformers.utils import ContextManagers
-
-import diffusers
-from diffusers import AutoencoderKL, DDPMScheduler, StableDiffusionPipeline, UNet2DConditionModel
-from diffusers.optimization import get_scheduler
-from diffusers.training_utils import EMAModel, compute_snr
-from diffusers.utils import check_min_version, deprecate, is_wandb_available, make_image_grid
-from diffusers.utils.import_utils import is_xformers_available
 
 # from midjourney_dataset import pkl_to_dataset
 
