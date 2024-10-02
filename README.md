@@ -13,7 +13,7 @@ python pkl_disk_midjourney.py
 ```
 
 ### 2. 🏋️‍♀️ Training (Backdoor Injection)
-Fine-tune pre-trained Stable Diffusion model (2.0, XL, XL-Turbo) using the generated poisoned dataset. 
+Fine-tune pre-trained Stable Diffusion model (2.0, XL, XL-Turbo) using the generated poisoned dataset. (We follow the finetuning code guidelines provided by Huggingface Diffusers)  
 
 * For fine-tuning Stable Diffusion 2.0 or below:
 ```
